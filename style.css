@@ -1,0 +1,217 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow:auto;
+    min-width: 360px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body::-webkit-scrollbar {display: none;}
+
+.wrap{
+    display:flex;
+    background-image: url('./images/Bgc.png');
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+.main-left{
+    width: 75%;
+    height: auto;
+}
+.main-right{
+    background-color: #525d9b;
+    width: 25%;
+    height: auto;
+}
+.header{
+    margin: 2rem;    
+    color: antiquewhite;
+}
+.header p{
+    font-size: 1.5rem;
+    padding-top:2rem;
+}
+.card{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 1rem;
+}
+.card-content{
+    max-width: 100%;
+    height: auto;
+    margin: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;  
+}
+.card-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: brightness(75%);
+    border-radius: 12px;
+    transition: all 0.75s ease-out;
+}
+.card-content img:hover{
+    transform:scale(1.05,1.05);
+    opacity: .75;
+}
+.card-name{
+    padding: 1rem;
+    position: absolute;
+    bottom:0 ; 
+}
+.card-name p{
+    color: rgb(244, 229, 209);
+    font-size: 1.6vw;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.card-name span{
+    font-size: 1rem;
+    font-weight: 600;
+}
+#card-icon{
+    position: absolute;
+    bottom:0;
+    margin: 0;
+    right: 0;
+    height: auto;
+    width: 20%;
+}
+
+.main-right{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: #000000;
+    backdrop-filter: 30px;
+    transition: 1s;
+    opacity: 0; 
+    margin-right: -100px;
+}
+.main-right-header{
+    max-width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    font-size: 2rem;
+    line-height: 2;
+    color: rgb(255, 255, 255);
+    transition: .3s;
+}
+.main-right-header #time{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.city-content{
+    max-width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.main-right-body{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 10px;
+    text-align: left;
+
+}
+.main-right-body span{
+    line-height: 3;
+    color: rgb(255, 255, 255);
+}
+
+.fade-in{
+    opacity: 1;
+    margin-right: 0px;
+}
+  
+
+
+@media only screen and (max-width:1024px){
+    .card{
+        grid-template-columns: repeat(3,1fr);
+        margin: 3rem;
+    }
+    .header h1{
+        font-size: 2.8vw;
+    }
+    .header p{
+        font-size: 2.2vw;
+    }
+    .card-content{
+        max-width:80%; height:80%;
+    }
+    .main-right{
+        width: 30%;
+        height: 100%;
+    }
+    .main-right-header #city-name,
+    .main-right-header #time {
+        font-size: 1.6rem; 
+    }
+}
+@media only screen and (max-width:768px){
+    .card{
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        margin: 0.5rem;
+    }
+    .header{
+        margin: 1rem;    
+    }
+    .header h1{
+        font-size: 2.4rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .header p{font-size: 2rem;text-align: center;}
+    .card-name p,.card-icon{
+        font-size: 1.8rem;
+    } 
+    .main-left{
+        width: 60%;
+        height: 100%;
+    }
+    .main-right{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100%;
+        background-color: #000000;
+        backdrop-filter: 30px;
+        opacity: .75;
+    }
+    .card-content{max-width:90%; height:auto;}
+
+    .city-content{
+        max-width: 100%;
+        height:auto;
+        margin-top: 4rem;
+    }
+    .main-right-header #city-name{
+        font-size: 1.6rem;
+    }
+    .main-right-header #time{
+        font-size: 1.2rem;
+    }
+    .main-right-body span{
+        font-size: 1rem;
+    }
+}
+
